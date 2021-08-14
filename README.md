@@ -1,6 +1,10 @@
 # PiDashboard
  a resource monitoring dashboard for raspberry pi
 
+# Requirements
+
+* Speedtest-cli
+
 # Purpose
 
 A simpler way to remotely monitor the resources used by the raspberry pi.
