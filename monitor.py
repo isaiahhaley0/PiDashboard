@@ -33,8 +33,9 @@ class Monitor:
 
     def get_cpu_usage(self):
         cpu = subprocess.run(["uptime"], stdout=subprocess.PIPE)
-        cpu = str(cpu.stdout)
-        print(cpu)
+        cpu = str(cpu.stdout).split(" ")
+        return cpu
         
 
- 
+test = Monitor()
+test.get_cpu_usage()

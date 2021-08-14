@@ -2,13 +2,16 @@ const app = Vue.createApp({
     data() {
         return { memory: 5,
                 temperature: 0,
-                pct_used:""}
+                pct_used:"",
+                uptime:0}
     },
     delimiters: ["[[","]]"],
     mounted(){
         this.getTemp();
         this.getMem();
         this.getPct();
+        //window.setInterval(()=>{this.getUptime()},60000)
+        this.getUptime();
     },
     methods:{
         getTemp(){
@@ -34,6 +37,15 @@ const app = Vue.createApp({
                 response=>response.json()
                 ).then(
                        data=>(this.pct_used=data["pct"])
+                        //see get temp
+                );
+     
+        },
+        getUptime(){
+            fetch("/uptime").then(
+                response=>response.json()
+                ).then(
+                       data=>(this.uptime=data["uptime"])
                         //see get temp
                 );
      
