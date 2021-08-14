@@ -19,4 +19,5 @@ def index():
     return render_template('home.html', memory = test.get_total_storage())
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5001, host='0.0.0.0')
+    test.get_cpu_usage()
+    app.run(debug=True, port=5000, host='0.0.0.0')
