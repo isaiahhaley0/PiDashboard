@@ -18,6 +18,8 @@ class Monitor:
             print(l)
     
     def get_cpu_usage(self):
-        return 0
+        cpu = subprocess.run(["top"], stdout=subprocess.PIPE)
+        print(cpu.stdout)
+        
 
         
